@@ -14,9 +14,9 @@ import os
 
 csv_path = "/Users/connectiot/Desktop/lramesh/automated_python/ORSNASCO_Pricing_Daily_Data.csv"
 def send_email(csv_path):
-    sender_email = "lakshmi.prabha@firmindustrial.com"
+    sender_email = os.getenv("EMAIL_USERNAME")
     receiver_email = "sales@firmindustrial.com"
-    password ="PTfAwCXRtuE0"
+    password =os.getenv("EMAIL_PASSWORD")
 
     subject="ORS Nasco Daily Report"
     body="Attached is the ORS NASCO daily csv report."
