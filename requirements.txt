@@ -1,0 +1,5 @@
+selenium
+time
+bs4
+pandas
+smtplib
