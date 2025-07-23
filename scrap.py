@@ -13,7 +13,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 import os 
-
+import tempfile
 
 
 csv_path = "/Users/connectiot/Desktop/lramesh/automated_python/ORSNASCO_Pricing_Daily_Data.csv"
@@ -45,10 +45,10 @@ def send_email(csv_path):
 
     print("Email sent successfully!")
 
-#options = Options()
-#options.add_argument("--headless")
+user_data_dir = tempfile.mkdtemp()
 options = Options()
-#options.add_argument("--headless=new")
+options.add_argument("--headless=new")
+options.add_argument(f"--user-data-dir={user_data_dir}")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/114.0.0.0 Safari/537.36")
