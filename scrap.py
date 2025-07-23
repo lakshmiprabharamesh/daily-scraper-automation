@@ -45,10 +45,14 @@ def send_email(csv_path):
 
 #options = Options()
 #options.add_argument("--headless")
+options = Options()
+options.add_argument("--headless=new")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
 
 service = Service(ChromeDriverManager().install())
 
-driver = webdriver.Chrome(service=service)
+driver = webdriver.Chrome(service=service,options=options)
 
 driver.get("https://www.orsnasco.com/storefrontCommerce/login.do")
 
