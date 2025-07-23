@@ -2,7 +2,7 @@ name: Daily Scraper Email
 
 on:
   schedule:
-    - cron: '0 14 * * *'   # 12 PM UTC = 8 AM EST
+    - cron: '0 12 * * *'   # 12 PM UTC = 8 AM EST
   workflow_dispatch:       # Allows manual trigger too
 
 jobs:
