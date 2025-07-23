@@ -1,5 +1,4 @@
 selenium
-time
-bs4
+beautifulsoup4
 pandas
-smtplib
+
