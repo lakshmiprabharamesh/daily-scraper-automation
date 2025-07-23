@@ -30,7 +30,7 @@ jobs:
         python scrap.py
 
     - name: Upload debug HTML
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: timeout-html
         path: debug_timeout.html
