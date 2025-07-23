@@ -22,18 +22,18 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    - name: Upload debug HTML
-      uses: actions/upload-artifact@v4
-      with:
-        name: timeout-html
-        path: debug_timeout.html    
-
     - name: Run your script
       env:
         EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
         EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
       run: |
         python scrap.py
+
+    - name: Upload debug HTML
+      uses: actions/upload-artifact@v4
+      with:
+        name: timeout-html
+        path: debug_timeout.html 
 
  
 
