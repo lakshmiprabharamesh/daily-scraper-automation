@@ -44,7 +44,7 @@ def send_email(csv_path):
     print("Email sent successfully!")
 
 options = Options()
-options.add_arguments("--headless")
+options.add_argument("--headless")
 
 service = Service(ChromeDriverManager().install())
 
