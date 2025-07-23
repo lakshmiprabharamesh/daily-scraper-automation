@@ -60,6 +60,9 @@ driver.get("https://www.orsnasco.com/storefrontCommerce/login.do")
 
 time.sleep(2)
 
+with open("debug_timeout.html", "w", encoding="utf-8") as f:
+    f.write(driver.page_source)
+
 wait = WebDriverWait(driver, 15)
 
 user_name_input = wait.until(EC.presence_of_element_located((By.ID, "user.loginId")))
