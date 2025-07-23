@@ -1,5 +1,7 @@
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 import time
 from bs4 import BeautifulSoup
@@ -41,12 +43,12 @@ def send_email(csv_path):
 
     print("Email sent successfully!")
 
+options = Options()
+options.add_arguments("--headless")
 
-driver_path ="/Users/connectiot/Downloads/chromedriver-mac-arm64/chromedriver"
+service = Service(ChromeDriverManager().install())
 
-service = Service(excecutable_path=driver_path)
-
-driver = webdriver.Chrome(service=service)
+driver = webdriver.Chrome(service=service,options=options)
 
 driver.get("https://www.orsnasco.com/storefrontCommerce/login.do")
 
