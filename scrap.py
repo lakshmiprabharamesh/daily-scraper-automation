@@ -43,12 +43,12 @@ def send_email(csv_path):
 
     print("Email sent successfully!")
 
-options = Options()
-options.add_argument("--headless")
+#options = Options()
+#options.add_argument("--headless")
 
 service = Service(ChromeDriverManager().install())
 
-driver = webdriver.Chrome(service=service,options=options)
+driver = webdriver.Chrome(service=service)
 
 driver.get("https://www.orsnasco.com/storefrontCommerce/login.do")
 
