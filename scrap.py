@@ -3,6 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -58,9 +60,15 @@ driver.get("https://www.orsnasco.com/storefrontCommerce/login.do")
 
 time.sleep(2)
 
-driver.find_element(By.NAME, "usr_name").send_keys("lakshmi.prabha@firmindustrial.com")
-driver.find_element(By.NAME,"usr_password").send_keys("SaiSaibaba@8080")
-driver.find_element(By.CSS_SELECTOR,'input[type="submit"][value="Sign In"]').click()
+wait = WebDriverWait(driver, 15)
+
+user_name_input = wait.unit(EC.presence_of_element_located((By.Id, "user.loginId")))
+password_input = wait.unitl(EC.presence_of_element_located((By.Id, "user.password")))
+button_click = wait.until(EC.element_to_be_clicked((By.CSS_SELECTOR,"input.button.signIn")))
+
+user_name_input.send_keys("lakshmi.prabha@firmindustrial.com")
+password_input.send_keys("SaiSaibaba@8080")
+button_click.click()
 
 time.sleep(5)
 
