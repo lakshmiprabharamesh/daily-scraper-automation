@@ -68,7 +68,7 @@ wait = WebDriverWait(driver, 15)
 
 user_name_input = wait.until(EC.presence_of_element_located((By.NAME, "usr_name")))
 password_input = wait.until(EC.presence_of_element_located((By.NAME, "usr_password")))
-button_click = wait.until(EC.element_to_be_clicked((By.CSS_SELECTOR,'input[type="submit"][value="Sign In"]')))
+button_click = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR,'input[type="submit"][value="Sign In"]')))
 
 user_name_input.send_keys("lakshmi.prabha@firmindustrial.com")
 password_input.send_keys("SaiSaibaba@8080")
